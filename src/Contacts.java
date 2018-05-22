@@ -6,4 +6,12 @@ public class Contacts {
         this.name = name;
         this.phone_number = phone_number;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getPhone_number(){
+        return phone_number;
+    }
 }

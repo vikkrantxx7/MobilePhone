@@ -6,6 +6,7 @@ public class Main {
         boolean quit = false;
         int choice;
         Scanner scan = new Scanner(System.in);
+        MobilePhone phone = new MobilePhone();
         while(!quit) {
             choice = scan.nextInt();
             switch(choice){
@@ -13,7 +14,16 @@ public class Main {
                     printInstructions();
                     break;
                 case 1:
-
+                    phone.printContacts();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    quit = true;
             }
         }
     }
