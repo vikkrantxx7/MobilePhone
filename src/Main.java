@@ -10,6 +10,7 @@ public class Main {
         while(!quit) {
             System.out.println("\t Enter your choice:-");
             choice = scan.nextInt();
+            scan.nextLine();
             switch(choice){
                 case 0:
                     printInstructions();
@@ -27,6 +28,9 @@ public class Main {
                     removeContact();
                     break;
                 case 5:
+                    findContact();
+                    break;
+                case 6:
                     quit = true;
             }
         }
@@ -39,19 +43,20 @@ public class Main {
         System.out.println("\t 2 - to add new contact");
         System.out.println("\t 3 - update existing contact");
         System.out.println("\t 4 - remove contact");
-        System.out.println("\t 5 - to QUIT");
+        System.out.println("\t 5 - find contact");
+        System.out.println("\t 6 - to QUIT");
     }
 
     static void addContact(){
-        System.out.println("First enter contact name then enter number");
-        String name = scan.next();
+        System.out.println("First enter contact name then enter number in next line");
+        String name = scan.nextLine();
         String phone_number = scan.nextLine();
         phone.addContact(name,phone_number);
     }
 
     static void updateContact(){
-        System.out.println("First enter contact name then enter number");
-        String name = scan.next();
+        System.out.println("First enter contact name then enter number in next line");
+        String name = scan.nextLine();
         String phone_number = scan.nextLine();
         phone.updateContact(name,phone_number);
     }
@@ -60,5 +65,11 @@ public class Main {
         System.out.println("Enter contact name");
         String name = scan.nextLine();
         phone.removeContact(name);
+    }
+
+    static void findContact(){
+        System.out.println("Enter contact name");
+        String name = scan.nextLine();
+        phone.findContact(name);
     }
 }

@@ -8,7 +8,7 @@ public class MobilePhone {
             System.out.println("List is empty. Kindly add contacts first.");
         }else {
             for (Contacts contct : contact) {
-                System.out.println(contct.getName() + "\t" + contct.getPhone_number());
+                System.out.println(contct.getName() + "\t->\t" + contct.getPhone_number());
             }
         }
     }
@@ -48,6 +48,14 @@ public class MobilePhone {
         int pos = searchContact(name);
         if(pos>=0){
             System.out.println(contact.remove(pos).getName()+" removed");
+            return;
+        }
+        System.out.println("Contact not present");
+    }
+
+    void findContact(String name){
+        if(searchContact(name)>=0){
+            System.out.println("Contact is present");
             return;
         }
         System.out.println("Contact not present");
