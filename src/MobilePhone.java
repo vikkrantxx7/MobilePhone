@@ -34,14 +34,17 @@ public class MobilePhone {
         System.out.println("Contact already present");
     }
 
-    void updateContact(String name,String phone_number){
-        int pos = searchContact(name);
-        if(pos>=0){
-            contact.set(pos,new Contacts(name,phone_number));
-            System.out.println("Contact updated");
+    void updateContact(String old_name,String new_name,String phone_number){
+        int pos = searchContact(old_name);
+        if(pos==-1){
+            System.out.println("Contact not present");
+            return;
+        }else if(searchContact(new_name)>=0){
+            System.out.println("New Contact name already present");
             return;
         }
-        System.out.println("Contact not present");
+        contact.set(pos,new Contacts(new_name,phone_number));
+        System.out.println("Contact updated");
     }
 
     void removeContact(String name){

@@ -55,10 +55,12 @@ public class Main {
     }
 
     static void updateContact(){
-        System.out.println("First enter contact name then enter number in next line");
-        String name = scan.nextLine();
+        System.out.println("Enter contact name to replace");
+        String old_name = scan.nextLine();
+        System.out.println("Enter new contact name and phone number");
+        String new_name = scan.nextLine();
         String phone_number = scan.nextLine();
-        phone.updateContact(name,phone_number);
+        phone.updateContact(old_name,new_name,phone_number);
     }
 
     static void removeContact(){
