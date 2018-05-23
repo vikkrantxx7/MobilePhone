@@ -1,13 +1,14 @@
 import java.util.*;
 
 public class Main {
+    private static Scanner scan = new Scanner(System.in);
+    private static MobilePhone phone = new MobilePhone();
     public static void main(String args[]){
-
         boolean quit = false;
         int choice;
-        Scanner scan = new Scanner(System.in);
-        MobilePhone phone = new MobilePhone();
+        printInstructions();
         while(!quit) {
+            System.out.println("\t Enter your choice:-");
             choice = scan.nextInt();
             switch(choice){
                 case 0:
@@ -17,10 +18,13 @@ public class Main {
                     phone.printContacts();
                     break;
                 case 2:
+                    addContact();
                     break;
                 case 3:
+                    updateContact();
                     break;
                 case 4:
+                    removeContact();
                     break;
                 case 5:
                     quit = true;
@@ -36,5 +40,25 @@ public class Main {
         System.out.println("\t 3 - update existing contact");
         System.out.println("\t 4 - remove contact");
         System.out.println("\t 5 - to QUIT");
+    }
+
+    static void addContact(){
+        System.out.println("First enter contact name then enter number");
+        String name = scan.next();
+        String phone_number = scan.nextLine();
+        phone.addContact(name,phone_number);
+    }
+
+    static void updateContact(){
+        System.out.println("First enter contact name then enter number");
+        String name = scan.next();
+        String phone_number = scan.nextLine();
+        phone.updateContact(name,phone_number);
+    }
+
+    static void removeContact(){
+        System.out.println("Enter contact name");
+        String name = scan.nextLine();
+        phone.removeContact(name);
     }
 }
